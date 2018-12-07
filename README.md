@@ -109,6 +109,20 @@ git push gitee master
 
 这样一来，我们的本地库就可以同时与多个远程库互相同步
 
+# 分支:test
+Git鼓励大量使用分支：
+
+查看分支：`git branch`
+
+创建分支：`git branch <name>`
+
+切换分支：`git checkout <name>`
+
+创建+切换分支：`git checkout -b <name>`
+
+合并某分支到当前分支：`git merge <name>`
+
+删除分支：`git branch -d <name>`
 
 [爱css](https://icss.me)
 
