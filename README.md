@@ -123,7 +123,9 @@ Git鼓励大量使用分支：
 
 合并某分支到当前分支：`git merge <name>`
 
-删除分支：`git branch -d <name>`
+删除本地分支：`git branch -d <name>`
+
+删除远程服务器上的分支：`git push origin -d BranchName`
 
 [爱css](https://icss.me)
 
