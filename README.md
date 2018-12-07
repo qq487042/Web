@@ -109,9 +109,8 @@ git push gitee master
 
 这样一来，我们的本地库就可以同时与多个远程库互相同步
 
-# 分支:master
-#### 这里是master
-#### 下面添加了aaa
+# 分支:
+
 Git鼓励大量使用分支：
 
 查看分支：`git branch`
