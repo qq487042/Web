@@ -1,10 +1,10 @@
 # python
 
 #### 项目介绍
-学习Python的笔记，收录的一些代码段
+学习web的笔记，收录的一些代码段
 
 #### 描述
-学习python,第一个使用git的东西，刚开始使用的是GITHUB,国内吧，就使用码云。
+学习web,第一个使用git的东西，刚开始使用的是GITHUB,国内吧，就使用码云，现在使用阿里云。
 
 #### 使用码云操作流程:
 1. 先在码云上创建一个库，比如：`python`
@@ -13,7 +13,7 @@
 
 3. 初始化本地库，先`cd`到`python`：`git init`
 
-4. 本地生成ssh-key,查看是否有：`$ cd ~/.ssh`，如果没有这个文件夹，则生成：`$ ssh-keygen`
+4. 本地生成ssh-key,查看是否有：`$ cd ~/.ssh`，如果没有这个文件夹，则生成：`$ ssh-keygen -t rsa -C "xxx@xxx.com"`，在终端添加SSH信任：`ssh -T git@gitee.com`
 
 5. 复制KEY到码云个的设置-安全设置-SSH公钥：`$ cat ~/.ssh/id_rsa.pub`
 
@@ -30,6 +30,9 @@
 2. 查看远程仓库有哪些：git remote -v
 3. 删除不要的远程仓库：git remote rm 远程仓库名
 4. 回退版本：git reset --hard 版本号
+5. 查看配置：git config --list
+6. 配置user.name ：git config --global user.name "阿乞云计算"
+7. 配置user.email: git config --global user.email "xxx@xxx.com"
 ```
 
 [爱css](https://icss.me)
