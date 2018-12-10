@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>我的PPT</title>
+<meta name="description" content="分享Web开发中的技术文章，分享生活中的灵感与创意，鼓励阅读，不读书则愚。" />
+<meta name="keywords" content="阿乞，阿乞网，开发者，技术，阅读，创意，博客，前端开发，后端开发，产品设计">
+<meta name="renderer" content="webkit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/fullpage.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<script src="js/jquery.js"></script>
+<script src="js/easings.js"></script>
+<script src="js/fullpage.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script>
+$(function(){
+	$.fn.fullpage({
+		verticalCentered: true,
+		scrollingSpeed:700,
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6','page7','page8','page9','page10'],
+		navigation: true,
+		navigationTooltips: ['首页', '盘点周期', '关于盘点枪', '未处理单据', '合理损耗率','承担计算', '盘亏抵冲', '店长交接','其他','结束'],
+		showActiveTooltip: true,
+		slidesNavigation: true,
+		slidesNavPosition: 'bottom',
+		normalScrollElements:'.box-scroll',
+		afterLoad: function(anchorLink, index){
+            $('.nav li').eq(index-1).children('a').addClass('nav-active');
+            //以下是滚动条的美化，一定要放在这里，不然多个相同的滚动条就不起作用了,要二层DIV:box-scroll与div-scroll
+            $('.active .box-scroll').niceScroll('.active .div-scroll',{
+                cursorcolor: "#0798EC",//#CC0071 光标颜色
+                cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+                touchbehavior: true, //使光标拖动滚动像在台式电脑触摸设备
+                grabcursorenabled:false,
+                cursorwidth: "5px", //像素光标的宽度
+                cursorborder: "0", // 游标边框css定义
+                cursorborderradius: "5px",//以像素为光标边界半径
+                autohidemode: "hidden"
+            });
+		},
+		onLeave: function(index, nextIndex, direction){
+		    $('.nav li').eq(index-1).children('a').removeClass('nav-active');
+		}
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<div class="top">
+    <div class="menu" id="menu">
+    	<h1 class="logo"><a href="https://www.nli.cn/"><img src="favicon.ico" alt="" /><span>nli.cn</span></a></h1>
+    	<ul class="nav">
+            <li><a href="#page1" class="nav-active">首页</a></li>
+        	<li><a href="#page2">盘点周期</a></li>
+        	<li><a href="#page3">关于盘点枪</a></li>
+        	<li><a href="#page4">未处理单据</a></li>
+        	<li><a href="#page5">合理损耗率</a></li>
+        	<li><a href="#page6">承担计算</a></li>
+        	<li><a href="#page7">盘亏抵冲</a></li>
+        	<li><a href="#page8">店长交接</a></li>
+        	<li><a href="#page9">其他</a></li>
+        	<li><a href="#page10">结束</a></li>
+    	</ul>
+    </div>
+</div>    
+<div class="section section-begin active">
+    <div class="bg"></div>
+    <img src="img/dsl.png" alt="" class="site-logo">
+	<p class="t1">盘点工作指导</p>
+	<p class="t2">忠诚、敬业、追求卓越</p>
+	
+</div>
+
+<div class="section section1">
+    <div class="bg"></div>
+    <p class="t1">盘点周期</p>
+    <p class="t3">大多数情况指的是已开业3个月后的门店</p>
+    <div class="bg-clock"></div>
+    <div class="div-table">
+    <table class="tb">
+        <tr><th>类别</th><th>周期</th></tr>
+        <tr><td>成参</td><td>3月/次</td></tr>
+        <tr><td>中药</td><td>4月/次</td></tr>
+        <tr><td>会员赠品</td><td>每月/次</td></tr>
+    </table>
+    </div>
+</div>
+
+<div class="section section2">
+    <div class="bg"></div>
+    <p class="t1">关于盘点枪</p>
+    <p class="t2">盘点枪实时同步数据，可边销售边盘点</p> 
+    <p class="t3">建表的方式是需要营业结束或前台不出数，比如<b>中药</b>的盘点</p>  
+    <div class="bg-pd"></div>
+</div>
+
+<div class="section section3">
+    <div class="bg"></div>
+    <div class="slide">
+        <div class="title1">配送调拨明细查询<b>11025</b></div><div class="title2">店与店间的相互调拨</div>
+        <img src="img/pd-2.png" >
+    </div>
+	<div class="slide">
+        <div class="title1">配送收货<b>11019</b></div><div class="title2">主要查询仓库来货</div>
+        <img src="img/pd-3.png" >
+    </div>
+    <div class="slide">
+        <div class="title1">出入库明细查询<b>15005</b></div><div class="title2">查询包括退货、报损、调拨、零售未记帐的明细</div>
+        <img src="img/pd-1.png" >
+    </div>
+</div>
+
+<div class="section section4">
+    <div class="bg"></div>
+    <p class="t1">合理损耗比例</p>
+    <p class="t3">合理损耗是指盘点周期内销售额 x 比例</p>
+    <div class="div-table">
+    <table class="tb">
+        <tr><th>类别</th><th>比例</th><th>新店</th></tr>
+        <tr><td>成药</td><td>1‰</td><td>3‰</td></tr>
+        <tr><td>参茸</td><td>1.5‰</td><td>3‰</td></tr>
+        <tr><td>中药</td><td colspan="2">2%</td></tr>
+    </table>
+    </div>
+</div>
+
+<div class="section section7">
+    <div class="bg"></div>
+    <div class="nao"></div>
+     <div class="nao2"></div>
+    <div class="slide">
+    <p class="title1">某店盘亏例子</p>
+    <div class="title2">
+        某旧店盘点后，参茸的分类结果如下：<br>参茸A：盈200<br>参茸B：亏300<br>盘点周期内参茸的销售额：40000<br>计算该店参茸盘亏需承担多少钱？
+    </div>
+    </div>
+    <div class="slide">
+    <p class="title1">承担计算结果</p>
+    <div class="title2">
+        处理金额：300<br><b>ABC分类不相互抵冲</b><br>合理损耗：40000*<b>1.5‰</b>=60<br>实际处理盘亏金额：300-60=240<br>门店承担金额：240*<b>0.6</b>=144
+    </div>
+    </div>
+</div>
+
+<div class="section section5">
+    <div class="bg"></div>
+    <p class="t1">不能抵冲盘亏</p>
+    <p class="t2">在公司活动日的<b>折价</b>、<b>买赠</b>商品的盘盈不得与同类盘亏商品抵冲</p>
+</div>
+
+<div class="section section6">
+    <div class="bg"></div>
+    <p class="t1">店长交接</p>
+    <p class="t2">新店长在交接盘点后，盘出距离失效期<b>≤2</b>个月的商品</p>
+    <p class="t3">门店全责<b>上一任店长70% 、员工30%</b>盘点后应当马上进行报损操作<br>新店长不需承担报损责任，切记不要等到商品过期了再去报损。</p>
+</div>
+
+<div class="section section8">
+    <div class="bg"></div>
+    <div class="slide">
+        <div class="c-left">
+            <div>
+            <h1>商品分类</h1>
+            <p>
+            从今年8月份开始，<b>物资</b>归为活动赠品，按成本价计算盈亏<br>物资主要包括：大参林胶袋、会员卡<br>赠品：主要指厂家赠品，这类归来成药管理，特别注意有送记得出数
+            </p>
+            </div>
+        </div>
+        <div class="c-right">
+            <div>
+                <div class="div-table box-scroll">
+                    <table class="tb-right div-scroll">
+                        <tr><th>类别</th><th>大类</th></tr>
+                        <tr><td rowspan="8">成药</td><td>OTC</td></tr>
+                        <tr><td>RX</td></tr>
+                        <tr><td>保健</td></tr>
+                        <tr><td>美容</td></tr>
+                        <tr><td>母婴</td></tr>
+                        <tr><td>器材</td></tr>
+                        <tr><td>休闲食品</td></tr>
+                        <tr><td>赠品</td></tr>
+                        <tr><td>参茸</td><td>参茸类</td></tr>
+                        <tr><td>中药</td><td>中药类</td></tr>
+                        <tr><td rowspan="2">会员赠品</td><td>活动赠品</td></tr>
+                        <tr><td>物资</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="c-left">
+            <div>
+            <h1>会员赠品查询</h1>
+            <p>
+        功能：综合报表查询<b>8800039</b><br>分类：<b>活动赠品</b>
+            </p>
+            </div>
+        </div>
+        <div class="c-right">
+            <div><img src="img/pd-cx.png" ></div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="c-left">
+            <div>
+            <h1>效期商品查询</h1>
+            <p>
+        功能：货品库存查询<b>15004</b><br>此功能查找出来的是系统上有库存的商品，通过点击<b>距离失效天数</b>排序,就能看到哪些商品快过期<br>注意：小于31天的商品，前台就出不了数了
+            </p>
+            </div>
+        </div>
+        <div class="c-right">
+            <div><img src="img/pd-kc.png" ></div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="c-left">
+            <div>
+            <h1>资产报废与调拨</h1>
+            <p>
+                1.报废：维修后无法使用需要换新的，旧的需要作报废处理<br>
+                2.调拨：资产调给其它店使用，需要作资产的调拨<br>
+                资产的调动务必要通知各自的资产员跟踪处理
+            </p>
+            </div>
+        </div>
+        <div class="c-right"></div>
+        <div class="zc-kt"></div>
+    </div>
+</div>
+
+<div class="section section-end">
+    <div class="bg"></div>
+    <p class="t1">感 谢 聆 听</p>
+    <p class="t2">无限追求，出类拔萃</p>
+    <div class="footer"> 
+		&copy; 2018-2021 - <a href="https://www.nli.cn/"><img src="favicon.ico" alt="" />nli.cn</a> - <a href="http://www.miitbeian.gov.cn/" target="_blank"> 粤ICP备16041704号-3 </a>
+	</div>
+</div>
+
+</body>
+</html>
